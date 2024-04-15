@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".MainFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidHor45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guidHor45"
+            app:cpb_background_progressbar_color="@color/pink"
+            app:cpb_background_progressbar_width="45dp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="#D5B63560"
+            app:cpb_progressbar_width="25dp"
+            app:cpb_round_border="true"
+            app:cpb_indeterminate_mode="false"
+            />
+
+        <TextView
+            android:id="@+id/progressBarPercentTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guidHor45"
+            tools:text=""
+            android:textSize="@dimen/_35sdp"
+            android:textColor="@color/infoTextColor2"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/batteryInfoCons"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/info_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidHor45"
+            app:layout_constraintVertical_bias="0.0">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintLeft_toRightOf="@id/guidVer5"
+                android:alpha="0.2"
+                app:layout_constraintTop_toTopOf="@id/guidHor15"
+                app:layout_constraintBottom_toTopOf="@id/guidHor15"
+                android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintLeft_toRightOf="@id/guidVer50"
+                app:layout_constraintTop_toTopOf="@id/guidHor50"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor50"
+                android:background="@color/black"
+                android:alpha="0.2"
+                android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintRight_toLeftOf="@id/guidVer50"
+                app:layout_constraintLeft_toRightOf="@id/guidVer5"
+                app:layout_constraintTop_toTopOf="@id/guidHor50"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor50"
+                android:background="@color/black"
+                android:alpha="0.2"
+                android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                app:layout_constraintRight_toRightOf="@id/guidVer50"
+                app:layout_constraintLeft_toLeftOf="@id/guidVer50"
+                app:layout_constraintTop_toBottomOf="@id/guidHor15"
+                app:layout_constraintBottom_toTopOf="@id/guidHor50"
+                android:background="@color/black"
+                android:alpha="0.2"
+                android:layout_marginVertical="@dimen/_10sdp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                app:layout_constraintRight_toRightOf="@id/guidVer50"
+                app:layout_constraintLeft_toLeftOf="@id/guidVer50"
+                app:layout_constraintTop_toBottomOf="@id/guidHor50"
+                app:layout_constraintBottom_toTopOf="@id/guidHor85"
+                android:background="@color/black"
+                android:alpha="0.2"
+                android:layout_marginVertical="@dimen/_10sdp"/>
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/white"
+                android:text="Baattery Info"
+                android:gravity="center"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/guidHor15"/>
+
+            <ImageView
+                android:id="@+id/batteryVoltageImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintLeft_toLeftOf="@id/guidVer5"
+                app:layout_constraintTop_toTopOf="@id/guidHor15"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor50"
+                android:src="@drawable/voltage"/>
+
+            <TextView
+                android:id="@+id/batteryVoltageTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/guidVer50"
+                app:layout_constraintLeft_toRightOf="@id/batteryVoltageImg"
+                app:layout_constraintTop_toTopOf="@id/batteryVoltageImg"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor"
+                android:text="Voltage"/>
+
+            <TextView
+                android:id="@+id/showBatteryVoltageTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/batteryVoltageImg"
+                app:layout_constraintRight_toLeftOf="@id/guidVer50"
+                app:layout_constraintTop_toBottomOf="@id/batteryVoltageTxt"
+                android:text="25"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor2"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/batteryVTechnologyImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintLeft_toRightOf="@id/guidVer50"
+                app:layout_constraintTop_toTopOf="@id/guidHor15"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor50"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/cpu"/>
+
+            <TextView
+                android:id="@+id/batteryTechnologyTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintLeft_toRightOf="@id/batteryVTechnologyImg"
+                app:layout_constraintTop_toTopOf="@id/batteryVTechnologyImg"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor"
+                android:text="Technology"/>
+
+            <TextView
+                android:id="@+id/showBatteryTechnologyTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/batteryVTechnologyImg"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintTop_toBottomOf="@id/batteryTechnologyTxt"
+                android:text="25"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor2"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/batteryPlugImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintLeft_toLeftOf="@id/guidVer5"
+                app:layout_constraintTop_toTopOf="@id/guidHor50"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor85"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/charging"/>
+
+            <TextView
+                android:id="@+id/batteryPlugTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/guidVer50"
+                app:layout_constraintLeft_toRightOf="@id/batteryPlugImg"
+                app:layout_constraintTop_toTopOf="@id/batteryPlugImg"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor"
+                android:text="Plug in"/>
+
+            <TextView
+                android:id="@+id/showBatteryPlugTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/batteryPlugImg"
+                app:layout_constraintRight_toLeftOf="@id/guidVer50"
+                app:layout_constraintTop_toBottomOf="@id/batteryPlugTxt"
+                android:text="25"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor2"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/batteryTemperatureImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintLeft_toRightOf="@id/guidVer50"
+                app:layout_constraintTop_toTopOf="@id/guidHor50"
+                app:layout_constraintBottom_toBottomOf="@id/guidHor85"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/temperature"/>
+
+            <TextView
+                android:id="@+id/batteryTemperatureTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintLeft_toRightOf="@id/batteryTemperatureImg"
+                app:layout_constraintTop_toTopOf="@id/batteryTemperatureImg"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:fontFamily="@font/iransansx_bold"
+                android:gravity="center"
+                android:textColor="@color/infoTextColor"
+                android:text="Temperature"/>
+
+            <TextView
+                android:id="@+id/showBatteryTemperatureTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/batteryTemperatureImg"
+                app:layout_constraintRight_toLeftOf="@id/guidVer95"
+                app:layout_constraintTop_toBottomOf="@id/batteryTemperatureTxt"
+                android:text="25"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:fontFamily="@font/iransansx_bold"
+                android:textColor="@color/infoTextColor2"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidHor15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidHor50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidHor85"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.85" />
+
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidVer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidVer50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidVer95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
